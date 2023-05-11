@@ -4,11 +4,6 @@ import { FaCogs, FaEdit, FaTrash } from "react-icons/fa";
 
 import { toast } from "react-toastify";
 
-// const getAllIdCard = async () => {
-//   const data = await fetch("http://localhost:5000/IdCards", { cache: "no-cache" });
-//   return data.json();
-// }
-
 const getAllIdCard = async() => {
   const response = await fetch(`http://localhost:5000/IdCards`, {cache: "no-cache"});
   return response.json();

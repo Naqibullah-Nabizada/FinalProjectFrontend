@@ -66,8 +66,8 @@ const IdCard = () => {
                   <td>{item.cost * item.count}</td>
                   <td>{item.tariff_num}</td>
                   <td>{item.tariff_date.slice(0, 10)}</td>
-                  <td>{item.pendant_num}</td>
-                  <td>{item.pendant_date.slice(0, 10)}</td>
+                  <td>{item.pendant_num ?? null}</td>
+                  <td>{item.pendant_date != null ? item.pendant_date.slice(0, 10) : null}</td>
                   <td>{item.remark}</td>
                   <td className="flex justify-around">
                     <Link href='' className="btn btn-sm btn-warning"><FaEdit className="bg-inherit" /></Link>

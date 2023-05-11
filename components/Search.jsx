@@ -6,27 +6,21 @@ import { FaSearch } from "react-icons/fa";
 
 const Search = () => {
   const search = useSearchParams();
+
   const [searchQuery, setSearchQuery] = useState(search ? search.get("search") : null);
   const router = useRouter();
 
   const onSearch = (e) => {
     e.preventDefault();
 
-    const encodeedSearchQuery = encodeURI(searchQuery || '');
-    router.push(`/income/id-cards/?search=${encodeedSearchQuery}`);
+    const encodedSearchQuery = encodeURI(searchQuery || '');
 
+    router.push(`/income/id-cards/?&search=${encodedSearchQuery}`);
   };
 
   return (
     <>
-      <form className="flex w-[85%] my-4 mx-auto" onSubmit={onSearch}>
-        <select name="searchBy" className="form-control w-48 mx-1">
-          <option value="reference">مرجع</option>
-          <option value="tariff_num">نمبر تعرفه</option>
-          <option value="tariff_date">تاریخ تعرفه</option>
-          <option value="pendant_num">نمبر آویز</option>
-          <option value="pendant_date">تاریخ آویز</option>
-        </select>
+      <form className="flex w-[50%] my-4 mx-[15rem]" onSubmit={onSearch}>
         <input type="search"
           value={searchQuery || ''}
           onChange={(e) => setSearchQuery(e.target.value)}
